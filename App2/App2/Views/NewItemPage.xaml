@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="New Item"
+             x:Class="App2.Views.NewItemPage">
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80" />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.Column="1">
+                <Entry
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Placeholder="This one works but not perfectly" />
+                <Entry
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Placeholder="This never opens up the keypad" />
+                <Button
+                    Grid.Row="3"
+                    Text="Button always disabled... " />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
