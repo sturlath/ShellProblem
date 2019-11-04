@@ -7,8 +7,7 @@
        xmlns:local="clr-namespace:App2.Views"
        Title="App2"
        x:Class="App2.AppShell"
-       FlyoutBehavior="Disabled"
-       Visual="Material">
+       FlyoutBehavior="Disabled">
 
     <!-- 
         Styles and Resources 
@@ -34,7 +33,7 @@
     <!-- Your Pages -->
     <TabBar>
         <Tab Title="Browse" Icon="tab_feed.png">
-            <ShellContent ContentTemplate="{DataTemplate local:NewItemPage}" />
+            <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
         <Tab Title="About" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
