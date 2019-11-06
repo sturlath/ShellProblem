@@ -5,6 +5,8 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using App2.Models;
+using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace App2.Views
 {
@@ -14,6 +16,10 @@ namespace App2.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
+       
+        public ICommand GoToAboutPageCommand => new Command(async () => await NavigateToAboutPageAsync().ConfigureAwait(false));
+        public async Task NavigateToAboutPageAsync() => await Shell.Current.GoToAsync($"aboutpage").ConfigureAwait(false); //<-- I hit this line but nothing heppens!
+        //private async Task NavigateToAboutPageAsync() => await Shell.Current.Navigation.PushAsync(new AboutPage()); <-- doesn't work either
 
         public NewItemPage()
         {

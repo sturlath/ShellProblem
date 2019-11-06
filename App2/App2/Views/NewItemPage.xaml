@@ -14,6 +14,7 @@
                 <RowDefinition Height="80" />
                 <RowDefinition Height="80" />
                 <RowDefinition Height="80" />
+                <RowDefinition Height="80" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10" />
@@ -35,11 +36,19 @@
                     Text="Button always disabled... " />
             </StackLayout>
 
-            <StackLayout Grid.Row="4" Grid.Column="1" VerticalOptions="End">
+            <StackLayout Grid.Row="4" Grid.Column="1">
                 <Button
                     Margin="0,5,0,10"
                     Style="{StaticResource Button_1}"
                     Text="Artifact upper left corner when clicked" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="5" Grid.Column="1" VerticalOptions="End">
+                <Button
+                    Margin="0,5,0,10"
+                    Style="{StaticResource Button_1}"
+                    Command="{Binding GoToAboutPageCommand}"
+                    Text="E" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>
