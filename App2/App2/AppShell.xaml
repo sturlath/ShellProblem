@@ -33,8 +33,13 @@
     <!-- Your Pages -->
 
     
-    <!-- Pages NOT a TAB or FLIGHOUT need to be INSIDE the TabBar or FlighOut hierarchy! Not like this!
-    <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />-->
+    <!-- Pages (that are NOT a TAB or FLIGHOUT)
+         need to be INSIDE the TabBar or FlighOut hierarchy!
+         Not like this, outside <TabBar> or <FlighOut> root!
+    
+    <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+    
+    -->
     
     <TabBar>
         <!-- If you want to see the Tabs they need to be first! />-->
