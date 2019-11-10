@@ -31,16 +31,24 @@
     </Shell.Resources>
 
     <!-- Your Pages -->
+
+    
+    <!-- Pages NOT a TAB or FLIGHOUT need to be INSIDE the TabBar or FlighOut hierarchy! Not like this!
+    <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />-->
+    
     <TabBar>
+        <!-- If you want to see the Tabs they need to be first! />-->
         <Tab Title="Browse" Icon="tab_feed.png">
             <ShellContent ContentTemplate="{DataTemplate local:ItemsPage}" />
         </Tab>
         <Tab Title="About" Icon="tab_about.png">
             <ShellContent ContentTemplate="{DataTemplate local:AboutPage}" />
         </Tab>
-        <Tab Title="About" Icon="tab_about.png">
-            <ShellContent ContentTemplate="{DataTemplate local:NewItemPage}" />
-        </Tab>
+
+        <!-- Order MATTERS!
+        The AboutPage needs to be below the Tabs because else it will be the first page and 
+        you will never ever see the Tabs-->
+        <ShellContent Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
     </TabBar>
 
 </Shell>

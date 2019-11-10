@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using App2.Models;
+using System;
 using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using App2.Models;
-using System.Windows.Input;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace App2.Views
 {
@@ -16,10 +12,23 @@ namespace App2.Views
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }
-       
-        public ICommand GoToAboutPageCommand => new Command(async () => await NavigateToAboutPageAsync().ConfigureAwait(false));
-        public async Task NavigateToAboutPageAsync() => await Shell.Current.GoToAsync($"aboutpage").ConfigureAwait(false); //<-- I hit this line but nothing heppens!
-        //private async Task NavigateToAboutPageAsync() => await Shell.Current.Navigation.PushAsync(new AboutPage()); <-- doesn't work either
+
+        public Command GoToAboutPageCommand => new Command(async () => await NavigateToAboutPageAsync());
+
+        //Version 1: Works but goes to the tabbed pages first (not straight to the AboutPage)
+        //public async Task NavigateToAboutPageAsync()
+        //{
+        //    await Navigation.PopModalAsync();
+        //    await Shell.Current.GoToAsync($"///AboutPage").ConfigureAwait(false);
+        //}
+
+        // Version 2:  Goes straight to the AboutPage like I wanted
+        public static async Task NavigateToAboutPageAsync()
+        {
+            var section = Shell.Current.CurrentItem.CurrentItem;
+            await Shell.Current.GoToAsync($"///AboutPage").ConfigureAwait(false);
+            await section.Navigation.PopModalAsync();
+        }
 
         public NewItemPage()
         {

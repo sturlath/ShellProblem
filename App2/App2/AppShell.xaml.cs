@@ -11,7 +11,6 @@ namespace App2
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute("aboutpage", typeof(AboutPage));
         }
     }
 }
